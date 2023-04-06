@@ -1,16 +1,21 @@
 package Controller;
 
+import java.io.IOException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class addProductFormController implements Initializable {
+public class AddProductFormController {
+    
+    Stage stage;
+    Parent scene;
 
     @FXML
     private Button addBtn;
@@ -78,10 +83,39 @@ public class addProductFormController implements Initializable {
     @FXML
     private TextField searchTxt;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    @FXML
+    void onActionAddPart(ActionEvent event) {
 
-        System.out.println("I am initialized");
+    }
+
+    @FXML
+    void onActionCancel(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onActionCancelToMain(ActionEvent event) throws IOException {
+        
+        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
+        scene = FXMLLoader.load(getClass().getResource("/View/mainForm.fxml"));
+        stage.setScene(new Scene(scene));
+        stage.show();
+
+    }
+
+    @FXML
+    void onActionRemovePart(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onActionSave(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onActionSaveToMain(ActionEvent event) {
+
     }
 
 }
