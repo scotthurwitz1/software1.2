@@ -11,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import main.Switcher;
 
 public class AddProductFormController {
     
@@ -96,10 +97,8 @@ public class AddProductFormController {
     @FXML
     void onActionCancelToMain(ActionEvent event) throws IOException {
         
-        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-        scene = FXMLLoader.load(getClass().getResource("/View/mainForm.fxml"));
-        stage.setScene(new Scene(scene));
-        stage.show();
+        Switcher switcher = new Switcher();
+        switcher.screen("/View/mainForm.fxml", event);
 
     }
 

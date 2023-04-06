@@ -11,6 +11,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
+import main.Switcher;
 
 public class ModifyPartFormController {
     
@@ -53,10 +54,8 @@ public class ModifyPartFormController {
     @FXML
     void onActionCancelPart(ActionEvent event) throws IOException {
         
-        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-        scene = FXMLLoader.load(getClass().getResource("/View/mainForm.fxml"));
-        stage.setScene(new Scene(scene));
-        stage.show();
+        Switcher switcher = new Switcher();
+        switcher.screen("/View/mainForm.fxml", event);
 
     }
 

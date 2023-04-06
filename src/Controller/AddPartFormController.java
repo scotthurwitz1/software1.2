@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import main.Switcher;
 
 public class AddPartFormController {
     
@@ -49,10 +50,8 @@ public class AddPartFormController {
     @FXML
     void onActionCancelPart(ActionEvent event) throws IOException {
         
-        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-        scene = FXMLLoader.load(getClass().getResource("/View/mainForm.fxml"));
-        stage.setScene(new Scene(scene));
-        stage.show();
+        Switcher switcher = new Switcher();
+        switcher.screen("/View/mainForm.fxml", event);
         
     }
 
