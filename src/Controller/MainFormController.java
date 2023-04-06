@@ -11,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import main.Switcher;
 
 public class MainFormController {
     
@@ -77,20 +78,16 @@ public class MainFormController {
     @FXML
     void onActionAddPart(ActionEvent event) throws IOException {
         
-        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-        scene = FXMLLoader.load(getClass().getResource("/View/addPartForm.fxml"));
-        stage.setScene(new Scene(scene));
-        stage.show();
+        Switcher switcher = new Switcher();
+        switcher.screen("/View/addPartForm.fxml", event);
         
     }
 
     @FXML
     void onActionAddProduct(ActionEvent event) throws IOException {
-
-        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-        scene = FXMLLoader.load(getClass().getResource("/View/addProductForm.fxml"));
-        stage.setScene(new Scene(scene));
-        stage.show();
+        
+        Switcher switcher = new Switcher();
+        switcher.screen("/View/addProductForm.fxml", event);
         
     }
 
@@ -106,26 +103,24 @@ public class MainFormController {
 
     @FXML
     void onActionExit(ActionEvent event) {
+        
+        System.exit(0);
 
     }
 
     @FXML
     void onActionModifyPart(ActionEvent event) throws IOException {
         
-        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-        scene = FXMLLoader.load(getClass().getResource("/View/modifyPartForm.fxml"));
-        stage.setScene(new Scene(scene));
-        stage.show();
+        Switcher switcher = new Switcher();
+        switcher.screen("/View/modifyPartForm.fxml", event);
         
     }
 
     @FXML
     void onActionModifyProduct(ActionEvent event) throws IOException {
         
-        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-        scene = FXMLLoader.load(getClass().getResource("/View/modifyProductForm.fxml"));
-        stage.setScene(new Scene(scene));
-        stage.show();
+        Switcher switcher = new Switcher();
+        switcher.screen("/View/modifyProductForm.fxml", event);
 
     }
 
