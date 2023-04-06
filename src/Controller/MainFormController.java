@@ -15,8 +15,7 @@ import main.Switcher;
 
 public class MainFormController {
     
-    Stage stage;
-    Parent scene;
+    Switcher switcher = new Switcher();
     
     @FXML
     private Button exitBtn;
@@ -78,7 +77,6 @@ public class MainFormController {
     @FXML
     void onActionAddPart(ActionEvent event) throws IOException {
         
-        Switcher switcher = new Switcher();
         switcher.screen("/View/addPartForm.fxml", event);
         
     }
@@ -86,7 +84,6 @@ public class MainFormController {
     @FXML
     void onActionAddProduct(ActionEvent event) throws IOException {
         
-        Switcher switcher = new Switcher();
         switcher.screen("/View/addProductForm.fxml", event);
         
     }
@@ -111,7 +108,6 @@ public class MainFormController {
     @FXML
     void onActionModifyPart(ActionEvent event) throws IOException {
         
-        Switcher switcher = new Switcher();
         switcher.screen("/View/modifyPartForm.fxml", event);
         
     }
@@ -119,7 +115,6 @@ public class MainFormController {
     @FXML
     void onActionModifyProduct(ActionEvent event) throws IOException {
         
-        Switcher switcher = new Switcher();
         switcher.screen("/View/modifyProductForm.fxml", event);
 
     }

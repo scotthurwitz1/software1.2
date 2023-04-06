@@ -14,8 +14,8 @@ import javafx.stage.Stage;
 import main.Switcher;
 
 public class ModifyProductFormController {
-    Stage stage;
-    Parent scene;
+    
+    Switcher switcher = new Switcher();
 
     @FXML
     private Button addBtn;
@@ -96,7 +96,6 @@ public class ModifyProductFormController {
     @FXML
     void onActionCancelToMain(ActionEvent event) throws IOException {
         
-        Switcher switcher = new Switcher();
         switcher.screen("/View/mainForm.fxml", event);
         
     }

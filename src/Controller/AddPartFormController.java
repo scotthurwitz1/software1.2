@@ -14,8 +14,7 @@ import main.Switcher;
 
 public class AddPartFormController {
     
-    Stage stage;
-    Parent scene;
+    Switcher switcher = new Switcher();
 
     @FXML
     private Button cancelBtn;
@@ -50,7 +49,6 @@ public class AddPartFormController {
     @FXML
     void onActionCancelPart(ActionEvent event) throws IOException {
         
-        Switcher switcher = new Switcher();
         switcher.screen("/View/mainForm.fxml", event);
         
     }
