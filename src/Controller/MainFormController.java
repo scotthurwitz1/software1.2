@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Inventory;
 import Model.Part;
 import Model.Product;
 import java.io.IOException;
@@ -15,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import main.Switcher;
 
@@ -71,7 +73,7 @@ public class MainFormController implements Initializable {
     private TableColumn<Product, String> prodNameCol;
 
     @FXML
-    private TableColumn<Product, Float> prodPriceCol;
+    private TableColumn<Product, Float> prodCostCol;
 
     @FXML
     private TableView<Product> prodTbl;
@@ -126,8 +128,22 @@ public class MainFormController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        System.out.println("I am initialized");
+        
+        // Parts Table Methods
+        partsTbl.setItems(Inventory.getAllParts());
+        partIdCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        partCostCol.setCellValueFactory(new PropertyValueFactory<>("price"));
+        partInvCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
+        partNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        
+        // Products Table Methods
+        prodTbl.setItems(Inventory.getAllProducts());
+        prodIdCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        prodCostCol.setCellValueFactory(new PropertyValueFactory<>("price"));
+        prodInvCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
+        prodNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        
+        
     }
 
 }
