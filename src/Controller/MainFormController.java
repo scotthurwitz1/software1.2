@@ -3,9 +3,12 @@ package Controller;
 import Model.Part;
 import Model.Product;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -15,7 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.Switcher;
 
-public class MainFormController {
+public class MainFormController implements Initializable {
     
     Switcher switcher = new Switcher();
     
@@ -119,6 +122,12 @@ public class MainFormController {
         
         switcher.screen("/View/modifyProductForm.fxml", event);
 
+    }
+    
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        System.out.println("I am initialized");
     }
 
 }
