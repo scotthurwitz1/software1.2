@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.Part;
+import Model.Product;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,28 +26,28 @@ public class MainFormController {
     private Button partAddBtn;
 
     @FXML
-    private TableColumn<?, ?> partCostCol;
+    private TableColumn<Part, Float> partCostCol;
 
     @FXML
     private Button partDelBtn;
 
     @FXML
-    private TableColumn<?, ?> partIdCol;
+    private TableColumn<Part, Integer> partIdCol;
 
     @FXML
-    private TableColumn<?, ?> partInvCol;
+    private TableColumn<Part, Integer> partInvCol;
 
     @FXML
     private Button partModBtn;
 
     @FXML
-    private TableColumn<?, ?> partNameCol;
+    private TableColumn<Part, String> partNameCol;
 
     @FXML
     private TextField partSearchTxt;
 
     @FXML
-    private TableView<?> partsTbl;
+    private TableView<Part> partsTbl;
 
     @FXML
     private Button prodAddBtn;
@@ -54,22 +56,22 @@ public class MainFormController {
     private Button prodDelBtn;
 
     @FXML
-    private TableColumn<?, ?> prodIdCol;
+    private TableColumn<Product, Integer> prodIdCol;
 
     @FXML
-    private TableColumn<?, ?> prodInvCol;
+    private TableColumn<Product, Integer> prodInvCol;
 
     @FXML
     private Button prodModBtn;
 
     @FXML
-    private TableColumn<?, ?> prodNameCol;
+    private TableColumn<Product, String> prodNameCol;
 
     @FXML
-    private TableColumn<?, ?> prodPriceCol;
+    private TableColumn<Product, Float> prodPriceCol;
 
     @FXML
-    private TableView<?> prodTbl;
+    private TableView<Product> prodTbl;
 
     @FXML
     private TextField searchProdTxt;

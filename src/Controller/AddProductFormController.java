@@ -1,16 +1,13 @@
 package Controller;
 
+import Model.Part;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import main.Switcher;
 
 public class AddProductFormController {
@@ -39,37 +36,37 @@ public class AddProductFormController {
     private TextField nameTxt;
 
     @FXML
-    private TableColumn<?, ?> partListIdCol;
+    private TableColumn<Part, Integer> partListIdCol;
 
     @FXML
-    private TableColumn<?, ?> partListInvCol;
+    private TableColumn<Part, Integer> partListInvCol;
 
     @FXML
-    private TableColumn<?, ?> partListNameCol;
+    private TableColumn<Part, String> partListNameCol;
 
     @FXML
-    private TableColumn<?, ?> partListPriceCol;
+    private TableColumn<Part, Float> partListPriceCol;
 
     @FXML
-    private TableView<?> partListTbl;
+    private TableView<Part> partListTbl;
 
     @FXML
     private TextField priceTxt;
 
     @FXML
-    private TableColumn<?, ?> relPartIdCol;
+    private TableColumn<Part, Integer> relPartIdCol;
 
     @FXML
-    private TableColumn<?, ?> relPartInvCol;
+    private TableColumn<Part, Integer> relPartInvCol;
 
     @FXML
-    private TableColumn<?, ?> relPartNameCol;
+    private TableColumn<Part, String> relPartNameCol;
 
     @FXML
-    private TableColumn<?, ?> relPartPriceCol;
+    private TableColumn<Part, Float> relPartPriceCol;
 
     @FXML
-    private TableView<?> relPartTbl;
+    private TableView<Part> relPartTbl;
 
     @FXML
     private Button removeBtn;
